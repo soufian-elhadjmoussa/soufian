@@ -1,0 +1,222 @@
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-family:'微软雅黑';
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    width: 300px;
+    height: 400px;
+    margin: 40px auto;
+    perspective: 900px;
+    perspective-origin: center center;
+}
+.box{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: 1s;
+    transform: rotatey(0deg) translate(10%) scale(0.7);
+    transform-origin: left;
+    backface-visibility: hidden;
+}
+.box:hover{
+    transform: translate(100%) rotatey(-180deg); 
+}
+
+.box .face{
+    width: 100%;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight:bolder ;
+    font-size: 30px;
+    position:absolute;
+    border-radius: 20px;
+    overflow: hidden;   
+}
+.front{
+    background-color: red;
+    transform: rotatey(180deg);
+}
+.back{
+    background-color: green;
+    
+}
+.front h2{
+    padding: 5px 10px;
+    margin: 2px auto;
+    color: black;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: sans-serif;
+    letter-spacing: 2px;
+    font-size: 12px;
+
+}
+.front p{
+    padding:5px;
+    width: 100%;
+    font-size: 5px;
+
+}
+
+.front button{
+    padding:5px 10px;
+    margin: 5px auto;
+    background-color: rgb(126, 1, 1);
+    color:white;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    box-shadow: 1px 1px 10px rgb(168, 5, 5);
+}
+
+
+
+.watch{
+    width: 400px;
+    height: 400px;
+    background-color: rgb(76, 1, 1);
+    border: 10px solid red;
+    margin: 40px auto;
+    border-radius: 50%;
+    position: relative;
+}
+
+.watch::before{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    content: '';
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255);
+    transform: translate(-50% ,-50%);
+}
+
+.stick{
+ width: 35%;
+ height: 1px;
+ border-radius: 10px;
+ background-color: white;
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: rotate(0deg)  translate(-50% , -50%);
+ transform-origin: left;
+ animation:turn 60s steps(60)  infinite;
+}
+@keyframes turn{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform:rotate(360deg) ;
+    }
+}
+.stick::before{
+    position: absolute;
+    top: 50%;
+    left: 99%;
+    transform: translatey(-50%);
+    content: '';
+    border: 10px solid rgb(255, 255, 255);
+    border-bottom-color:transparent ;
+    border-top-color:transparent ;
+    border-right-color:transparent ;
+}
+
+
+.piont{
+    position: absolute;
+    font-size: 26px;
+    font-weight: bolder;
+    color: rgb(255, 255, 255);
+}
+.p1{
+    left: 50%;
+    top: 0;
+    transform: translate(-50% , 0);
+}
+.p2{
+    left: 100%;
+    top: 50%;
+    transform: translate(-150% ,-50%);
+}
+.p3{
+    left: 50%;
+    top: 100%;
+    transform: translate(-50% , -100%);
+}
+.p4{
+    left: 0;
+    top: 50%;
+    transform: translate(50% , -50%);
+}
+
+
+
+.laoding{
+    width: 400px;
+    height: 400px;
+    margin: 40px auto;
+    background-color: #333;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.pointer{
+   width: 30px; 
+   height: 30px;
+   background-color: blueviolet;
+   border-radius: 50%;
+   margin: auto 5px; 
+   animation-name: up-and-down;
+   animation-duration: 0.9s;
+   animation-iteration-count: infinite;
+   animation-direction: alternate;
+}
+.q2{
+    animation-delay: .3s;
+}
+.q3{
+    animation-delay: .6s ; 
+}
+
+@keyframes up-and-down {
+    to{
+        opacity: 0.6;
+        transform: scale(0.4) ;
+    }
+}
+
+.soufian{
+    font-size: 30px;
+    font-weight: bolder;
+    color: transparent;
+    background-color: black;
+    -webkit-text-stroke: 1px red;
+}
+
+
+[name="soufian"]{
+    color: red;
+    background-color: black;
+}
